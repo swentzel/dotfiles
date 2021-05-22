@@ -1,0 +1,29 @@
+#!/bin/zsh
+#
+# Run all dotfiles installers.
+
+cd "$(dirname $0)"/..
+
+echo "\n${WAITING}Running install scripts..."
+
+# find the installers and run them iteratively
+find . -name install.sh | while read installer ; do \
+  echo "${WAITING}Running ${installer}..."; \
+  ./"${installer}"; \
+  echo "${DONE}Finished ${installer}\n"; \
+done
+
+echo "${DONE}Finished running install scripts\n"
+echo "${WAITING}Running postinstall scripts..."
+
+# find the post-installers and run them iteratively
+source ~/.zshrc
+find . -name postinstall.sh | while read installer ; do \
+  echo "${WAITING}Running ${installer}..."; \
+  ./"${installer}"; \
+  echo "${DONE}Finished ${installer}\n"; \
+done
+
+echo "${DONE}Finished running postinstall scripts\n"
+
+echo "All done setting up dotfiles! Open a new shell to apply changes."
