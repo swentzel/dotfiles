@@ -15,4 +15,4 @@ echo "${WAITING}Bootstrapping... (copying dotfiles and creating directories)";
 echo "${DONE}Done bootstrapping\n";
 
 # Run package manager installation scripts
-./script/install.zsh
+./script/mainInstaller.sh
