@@ -1,0 +1,25 @@
+{
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    // Set the default
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    // Enable per-language
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true
+    },
+    "[html]": {
+      "editor.formatOnSave": true
+    },
+    "files.associations": {
+        ".env.production": "dotenv",
+        ".env.acceptance": "dotenv",
+        ".env.development": "dotenv",
+        ".env.dev": "dotenv",
+        ".env.test": "dotenv"
+    },
+}
